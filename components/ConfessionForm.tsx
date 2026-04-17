@@ -48,8 +48,8 @@ export default function ConfessionForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-8">
-      <div className="rounded-none border border-surface-3 bg-surface-2 p-6">
-        <label htmlFor="whisper" className="mb-3 block font-label uppercase tracking-[0.35em] text-[10px] text-tertiary">
+      <div className="rounded-none border border-surface-3 bg-surface-2 p-4 sm:p-6">
+        <label htmlFor="whisper" className="mb-3 block font-label uppercase tracking-[0.2em] sm:tracking-[0.35em] text-[10px] text-tertiary">
           Confession
         </label>
         <textarea
@@ -60,7 +60,7 @@ export default function ConfessionForm() {
           spellCheck={false}
           rows={14}
           maxLength={MAX_CHARS}
-          className="w-full min-h-[280px] resize-none border-0 bg-surface p-6 text-lg font-mono leading-8 text-on-surface outline-none transition focus:border-0 focus:ring-2 focus:ring-tertiary/20 sm:min-h-[380px]"
+          className="w-full min-h-[220px] resize-none border-0 bg-surface p-4 text-base font-mono leading-7 text-on-surface outline-none transition focus:border-0 focus:ring-2 focus:ring-tertiary/20 sm:min-h-[380px] sm:p-6 sm:text-lg sm:leading-8"
         />
         <div className="mt-3 flex flex-col gap-2 text-[12px] text-on-surface-variant sm:flex-row sm:items-center sm:justify-between">
           <span>Pansinin mo ako: Hanggang 30 days lang ang parinig/rant mo boi</span>
@@ -74,7 +74,7 @@ export default function ConfessionForm() {
         <button
           type="submit"
           disabled={status === "loading" || message.trim().length === 0}
-          className="inline-flex items-center justify-center rounded-none bg-tertiary px-10 py-4 text-sm font-bold uppercase tracking-[0.35em] text-surface transition hover:bg-tertiary/90 disabled:cursor-not-allowed disabled:opacity-70"
+          className="inline-flex w-full items-center justify-center rounded-none bg-tertiary px-6 py-4 text-sm font-bold uppercase tracking-[0.25em] sm:px-10 sm:tracking-[0.35em] text-surface transition hover:bg-tertiary/90 disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "loading" ? "Ibulong..." : "Ibulong"}
         </button>

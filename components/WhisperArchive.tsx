@@ -43,22 +43,22 @@ export default function WhisperArchive() {
   return (
     <div className="space-y-8">
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <div className="rounded-none border border-surface-3 bg-surface-2 p-8 sm:p-10">
-          <p className="font-headline text-3xl leading-tight text-on-surface">Gathered Silence</p>
-          <p className="mt-6 text-sm leading-7 text-on-surface-variant">
+        <div className="rounded-none border border-surface-3 bg-surface-2 p-6 sm:p-10">
+          <p className="font-headline text-2xl leading-tight text-on-surface sm:text-3xl">Gathered Silence</p>
+          <p className="mt-4 sm:mt-6 text-sm leading-7 text-on-surface-variant">
             A curated selection of unspoken words released into the digital ether, protected by anonymity and a quiet editorial tone.
           </p>
         </div>
 
-        <div className="rounded-none border border-surface-3 bg-surface-2 p-8 sm:p-10">
-          <p className="font-label uppercase tracking-[0.35em] text-[10px] text-tertiary">Archive</p>
+        <div className="rounded-none border border-surface-3 bg-surface-2 p-6 sm:p-10">
+          <p className="font-label uppercase tracking-[0.2em] sm:tracking-[0.35em] text-[10px] text-tertiary">Archive</p>
           <p className="mt-4 text-sm leading-7 text-on-surface-variant">
             Recent whispers appear below. Each entry is intentionally restrained, soft, and aligned with the Talinghaga aesthetic.
           </p>
         </div>
 
-        <div className="rounded-none border border-surface-3 bg-surface-2 p-8 sm:p-10">
-          <p className="font-label uppercase tracking-[0.35em] text-[10px] text-tertiary">Search</p>
+        <div className="rounded-none border border-surface-3 bg-surface-2 p-6 sm:p-10">
+          <p className="font-label uppercase tracking-[0.2em] sm:tracking-[0.35em] text-[10px] text-tertiary">Search</p>
           <input
             type="search"
             value={query}
@@ -82,10 +82,10 @@ export default function WhisperArchive() {
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredWhispers.map((whisper) => (
-            <article key={whisper.id} className="group relative overflow-hidden rounded-none border border-surface-3 bg-surface-2 p-8">
+            <article key={whisper.id} className="group relative overflow-hidden rounded-none border border-surface-3 bg-surface-2 p-6 sm:p-8">
               <div className="space-y-5">
-                <p className="font-headline text-xl italic leading-relaxed text-on-surface">{whisper.content}</p>
-                <div className="text-[10px] uppercase tracking-[0.35em] text-on-surface-variant">
+                <p className="font-headline text-lg italic leading-relaxed text-on-surface sm:text-xl">{whisper.content}</p>
+                <div className="text-[10px] uppercase tracking-[0.2em] sm:tracking-[0.35em] text-on-surface-variant">
                   {new Date(whisper.created_at).toLocaleString("en-US", {
                     month: "short",
                     day: "numeric",
