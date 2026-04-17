@@ -2,8 +2,8 @@ import Link from "next/link";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/offer-a-whisper", label: "Offer a Whisper" },
-  { href: "/archive", label: "The Archive" }
+  { href: "/offer-a-whisper", label: "Post a Parinig" },
+  { href: "/archive", label: "Wall" }
 ];
 
 export default function SiteHeader() {

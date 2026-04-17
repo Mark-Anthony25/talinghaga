@@ -11,13 +11,13 @@ export default function OfferAWhisperPage() {
           <div className="space-y-8">
             <div className="rounded-none border border-surface-3 bg-surface-2 p-10">
               <p className="font-label uppercase tracking-[0.35em] text-[10px] text-tertiary">
-                Offer a Whisper
+                Leave a Parinig
               </p>
               <h1 className="mt-4 font-headline text-5xl leading-tight text-on-surface">
-                What is the weight you carry today?
+                Say it loud without your name.
               </h1>
               <p className="mt-6 text-lg leading-8 text-on-surface-variant">
-                Type your whisper below and send it to the pader. Leave your metaphor here, or rant lang—this archive listens to both.
+                Type your parinig, rant, or indirect confession. It stays anonymous and disappears after 30 days.
               </p>
             </div>
 
