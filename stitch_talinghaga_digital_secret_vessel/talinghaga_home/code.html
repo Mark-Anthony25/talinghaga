@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Talinghaga | A Sanctuary for the Unspoken</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#b1ba8a",
+                        "error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474836",
+                        "surface-container-highest": "#34362d",
+                        "on-surface": "#e3e3d6",
+                        "primary": "#c8c8b0",
+                        "tertiary-fixed-dim": "#f0bd8b",
+                        "on-primary-container": "#e2e3ca",
+                        "primary-fixed-dim": "#c8c8b0",
+                        "surface": "#12140d",
+                        "on-tertiary-container": "#ffdab8",
+                        "primary-fixed": "#e4e4cc",
+                        "inverse-on-surface": "#2f3128",
+                        "outline": "#8f9284",
+                        "on-surface-variant": "#c5c8b8",
+                        "surface-container-high": "#292b22",
+                        "secondary-fixed": "#dee8b4",
+                        "secondary": "#c2cb9a",
+                        "surface-variant": "#34362d",
+                        "error": "#ffb4ab",
+                        "background": "#12140d",
+                        "on-tertiary": "#482904",
+                        "inverse-primary": "#5e604d",
+                        "surface-tint": "#c8c8b0",
+                        "outline-variant": "#45483c",
+                        "on-secondary-fixed": "#171e01",
+                        "secondary-container": "#424a24",
+                        "tertiary": "#f0bd8b",
+                        "surface-container-low": "#1a1c14",
+                        "surface-bright": "#383a31",
+                        "on-tertiary-fixed-variant": "#623f18",
+                        "on-secondary": "#2c3410",
+                        "surface-dim": "#12140d",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#ffdcbd",
+                        "on-secondary-fixed-variant": "#424a24",
+                        "primary-container": "#646552",
+                        "surface-container": "#1e2018",
+                        "on-tertiary-fixed": "#2c1600",
+                        "surface-container-lowest": "#0d0f08",
+                        "secondary-fixed-dim": "#c2cb9a",
+                        "on-primary": "#303221",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#835b31",
+                        "inverse-surface": "#e3e3d6",
+                        "on-background": "#e3e3d6",
+                        "on-primary-fixed": "#1b1d0e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"],
+                        "newsreader": ["Newsreader", "serif"],
+                        "manrope": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>.material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24
+    }
+.reveal-staggered-fade-in {
+    animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards
+    }
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+        } to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    }
+.bg-grain {
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAfjmww5l1ZYvv9LjH3hps2x3dc4DfaaKJK5XaUkdEnuKdHQzGmKopSIvH8V9eUMTg7NK96rgIOnaPYnXdVPzWCaG_MA5bNYp63HG8xELKAlbexY2eTqq25dqCBT0puTCveofrO0IDEuqGs8tpc4sTC8GZevrfUh17CKtXr47ANzFhLtcToMIbMoF_BUUZtJdRO4y2Te0X30xFl7SdNilolrHk0cmt7L7GVvf_29xJgfttvG-tjW7iM87atHoexsCU3qoRYhph2f2s);
+    opacity: 0.03
+    }</style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary selection:text-on-tertiary">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#12140d]/80 backdrop-blur-md no-border tonal-shift bg-[#1a1c14] flat no-shadows">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-7xl mx-auto">
+<div class="font-newsreader italic text-2xl text-[#e3e3d6]">Talinghaga</div>
+<nav class="hidden md:flex items-center gap-12">
+<a class="font-manrope uppercase tracking-widest text-xs text-[#f0bd8b] hover:text-[#e3e3d6] transition-colors duration-300" href="#">Archive</a>
+<a class="font-manrope uppercase tracking-widest text-xs text-[#c8c8b0]/60 hover:text-[#e3e3d6] transition-colors duration-300" href="#">Privacy</a>
+</nav>
+<div class="flex items-center gap-6 text-[#c8c8b0]">
+<button class="material-symbols-outlined hover:text-[#e3e3d6] transition-colors duration-300" data-icon="settings">settings</button>
+</div>
+</div>
+</header>
+<main class="relative pt-32 overflow-hidden">
+<div class="absolute inset-0 bg-grain pointer-events-none"></div>
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 min-h-[819px] flex flex-col justify-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8 reveal-staggered-fade-in" style="animation-delay: 100ms;">
+<h1 class="font-newsreader italic text-6xl md:text-8xl lg:text-9xl text-on-surface leading-[0.9] tracking-tight">
+                        A Sanctuary for the <span class="text-tertiary">Unspoken.</span>
+</h1>
+</div>
+<div class="lg:col-span-4 reveal-staggered-fade-in" style="animation-delay: 300ms;">
+<div class="flex flex-col gap-8 pb-4">
+<p class="font-newsreader text-xl md:text-2xl text-on-surface-variant leading-relaxed">
+                            A digital archive built to hold the weight of whispered truths, anonymous reflections, and the poetry of the hidden self.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-md font-manrope font-semibold tracking-wide hover:bg-primary-fixed-dim transition-all duration-300 shadow-xl shadow-surface-container-lowest/20">
+                                Offer a Whisper
+                            </button>
+<button class="border border-outline-variant/15 text-primary px-8 py-4 rounded-md font-manrope font-semibold tracking-wide hover:bg-surface-container-high transition-all duration-300">
+                                Enter the Archive
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Meaning Section -->
+<section class="bg-surface-container-low py-32 mt-20">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative group">
+<div class="aspect-[3/4] w-full overflow-hidden rounded-lg bg-surface-container-high">
+<img alt="The Archive" class="w-full h-full object-cover mix-blend-luminosity hover:mix-blend-normal transition-all duration-700 scale-105 group-hover:scale-100" data-alt="Close-up of an ancient leather-bound book with yellowed pages resting on a dark wood surface in moody library lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCE6v3qduWO-KskCiz_I19az1NpPMvIHl-6HWkdwC0G0zw3bwntN9aMycINWn_47DWvQyx2-olEcO6m1_T2E_RneT6DLJng7BZu0sW8ngC9fcC3HKNBZ5jkYEqUQjZfNzilvoy2gJlHKkQyV6JntW_gED2QMZhvOKkkzkw0_2Eg2kujIJHv0RSTUCbwnmVzh_o5LKM1r5hKRnTGFOSEhViZl8Lajf6riJ28svgSWjnrvutJ15zInc1isCfXzvDmPypg616nRDEKvX0"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-tertiary/10 backdrop-blur-xl rounded-full flex items-center justify-center border border-tertiary/20">
+<span class="font-newsreader italic text-tertiary text-lg text-center px-4">The metaphor of being.</span>
+</div>
+</div>
+<div class="flex flex-col gap-12">
+<div class="reveal-staggered-fade-in" style="animation-delay: 400ms;">
+<span class="font-manrope uppercase tracking-[0.3em] text-xs text-tertiary block mb-4">Etymology</span>
+<h2 class="font-newsreader text-5xl md:text-6xl text-on-surface leading-tight italic">Talinghaga</h2>
+<div class="mt-8 space-y-6 font-newsreader text-xl text-on-surface-variant leading-relaxed">
+<p>
+                                In Filipino literature, <span class="text-on-surface font-semibold italic">Talinghaga</span> is the soul of the poem. It is more than a simple metaphor; it is a profound mystery wrapped in an image, a riddle that invites the reader to look deeper than the surface.
+                            </p>
+<p>
+                                It is the art of saying everything by saying something else. Here, we embrace this tradition—providing a vessel for your most complex emotions to exist without judgment, shielded by the veil of anonymity.
+                            </p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-on-surface-variant group cursor-pointer w-fit reveal-staggered-fade-in" style="animation-delay: 500ms;">
+<span class="h-px w-12 bg-outline-variant group-hover:w-20 group-hover:bg-tertiary transition-all duration-500"></span>
+<span class="font-manrope text-sm tracking-widest uppercase group-hover:text-tertiary transition-colors">Learn our protocol</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Philosophy Grid -->
+<section class="max-w-7xl mx-auto px-8 py-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Large Feature -->
+<div class="md:col-span-2 bg-surface-container-high p-12 rounded-xl flex flex-col justify-between min-h-[400px] border border-outline-variant/5">
+<div class="font-newsreader text-4xl text-on-surface max-w-md">
+                        Encrypted in perpetuity. Your secrets are yours to keep, and ours to protect.
+                    </div>
+<div class="flex items-end justify-between">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="v_lock">lock</span>
+<span class="font-manrope text-xs uppercase tracking-widest text-on-surface-variant">Security Protocol</span>
+</div>
+<img alt="Security" class="w-32 h-32 object-cover rounded-lg opacity-40 grayscale" data-alt="Abstract glowing network lines on a deep black background representing digital encryption and security" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe3GZIRE44julf7PVbVxkzw58PiF3qwGPEhzUAHfy-_YaXmXDQHY3Cp0cLNv_cKkyb9wlpc1odS-EihMm4asp9mWwLZvvAIcSDvAXnnxouuhyxacOUi2FABfCRdEYyFHqCuld1Q0NzfWa8TRpWT5uZYO3o66YsFT71XUCzk7xzX2sjfFsLyPAw8y6dxZbfK8yJNmzp-xSutb2YQvzj0WdBA7L-Uo34hXbVmzK7XiTJxEQD_IHl5nTURvwdHe8_8joOAKxW3Qn89to"/>
+</div>
+</div>
+<!-- Secondary Card -->
+<div class="bg-primary-container/20 p-12 rounded-xl flex flex-col gap-8 border border-primary-container/10">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="auto_stories">auto_stories</span>
+<h3 class="font-newsreader text-3xl text-on-surface italic">The Archive</h3>
+<p class="font-manrope text-sm text-on-surface-variant leading-relaxed">
+                        Wander through a curated collection of human experience. Every whisper is a thread in the collective tapestry of the unspoken.
+                    </p>
+</div>
+<!-- Tertiary Card -->
+<div class="bg-surface-container-low p-12 rounded-xl flex flex-col gap-8 border border-outline-variant/5">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="edit_note">edit_note</span>
+<h3 class="font-newsreader text-3xl text-on-surface italic">Offer a Whisper</h3>
+<p class="font-manrope text-sm text-on-surface-variant leading-relaxed">
+                        Release your burden. Our interface is designed for focus and tranquility, ensuring your words flow without interruption.
+                    </p>
+</div>
+<!-- Bottom Large Card -->
+<div class="md:col-span-2 relative group overflow-hidden rounded-xl h-[400px]">
+<img alt="Sanctuary" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" data-alt="Distant silhouette of mountains at dawn shrouded in thick mist and fog creating a sense of mystery and depth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb7m4kNQUVHOJr3JiHKItWaH2rs5PwySmprByfLPCDvyB---r1Ta4DkTTUFQWC46Nfn81OMMcPXtIGKOCiZVLtY1liSKZulWzxCJQy7G24vSHph5LLEeDX8OGHGTfoormcFVzCZfduU_90Y8bJzz1TibuKGiyrYiFC0mOeZ8g6FMmmMr_ev9vfm7HWC2KR0V3Ou9XdY7h16k-QDEyQihomtuw8MI8sRtGQ-WCZXV_VwmO6ibNPwsqPFkEzifKfqsrw30pK5UHitag"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+<div class="absolute bottom-0 left-0 p-12 flex flex-col gap-4">
+<h3 class="font-newsreader text-4xl text-on-surface">The Sanctuary awaits.</h3>
+<p class="font-manrope text-on-surface-variant max-w-sm">A quiet space for the soul to speak when the world is too loud.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="py-40 text-center flex flex-col items-center">
+<h2 class="font-newsreader italic text-5xl md:text-7xl text-on-surface mb-12 reveal-staggered-fade-in" style="animation-delay: 200ms;">
+                Ready to unburden?
+            </h2>
+<div class="flex flex-col sm:flex-row gap-6 reveal-staggered-fade-in" style="animation-delay: 400ms;">
+<button class="bg-primary text-on-primary px-12 py-5 rounded-md font-manrope font-bold tracking-widest uppercase text-sm hover:bg-primary-fixed-dim transition-all shadow-2xl shadow-primary/10">
+                    Offer a Whisper
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t-0 py-12 bg-[#12140d] tonal-shift bg-[#1a1c14] flat">
+<div class="w-full px-8 flex flex-col items-center gap-4 text-center">
+<div class="flex gap-8 mb-4">
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#c8c8b0]/50 hover:text-[#e3e3d6] transition-colors" href="#">The Veil</a>
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#c8c8b0]/50 hover:text-[#e3e3d6] transition-colors" href="#">Archive Protocol</a>
+<a class="font-manrope text-[10px] tracking-widest uppercase text-[#c8c8b0]/50 hover:text-[#e3e3d6] transition-colors" href="#">Anonymity</a>
+</div>
+<p class="font-manrope text-[10px] tracking-widest uppercase text-[#c8c8b0]">© Talinghaga. Whispers encrypted in perpetuity.</p>
+</div>
+</footer>
+</body></html>
