@@ -21,15 +21,29 @@ function missingConfigResponse() {
   );
 }
 
+const MAX_CHARS = 300;
+const EXPIRY_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
+
 export async function GET() {
   const supabase = createSupabaseClient();
   if (!supabase) {
     return missingConfigResponse();
   }
 
+  const staleThreshold = new Date(Date.now() - EXPIRY_WINDOW_MS).toISOString();
+  const { error: cleanupError } = await supabase
+    .from("mga_talinghaga")
+    .delete()
+    .lt("created_at", staleThreshold);
+
+  if (cleanupError) {
+    return NextResponse.json({ error: cleanupError.message }, { status: 500 });
+  }
+
   const { data, error } = await supabase
     .from("mga_talinghaga")
     .select("id, content, created_at")
+    .gt("created_at", staleThreshold)
     .order("created_at", { ascending: false })
     .limit(24);
 
@@ -46,6 +60,16 @@ export async function POST(request: Request) {
     return missingConfigResponse();
   }
 
+  const staleThreshold = new Date(Date.now() - EXPIRY_WINDOW_MS).toISOString();
+  const { error: cleanupError } = await supabase
+    .from("mga_talinghaga")
+    .delete()
+    .lt("created_at", staleThreshold);
+
+  if (cleanupError) {
+    return NextResponse.json({ error: cleanupError.message }, { status: 500 });
+  }
+
   const body = await request.json();
   const content = typeof body?.content === "string" ? body.content.trim() : "";
 
@@ -53,8 +77,8 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Confession cannot be empty." }, { status: 400 });
   }
 
-  if (content.length > 1200) {
-    return NextResponse.json({ error: "Confession must be under 1200 characters." }, { status: 400 });
+  if (content.length > MAX_CHARS) {
+    return NextResponse.json({ error: `Confession must be under ${MAX_CHARS} characters.` }, { status: 400 });
   }
 
   const { data, error } = await supabase

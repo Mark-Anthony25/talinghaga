@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+const MAX_CHARS = 300;
+
 export default function ConfessionForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
@@ -17,8 +19,8 @@ export default function ConfessionForm() {
       return;
     }
 
-    if (trimmed.length > 1200) {
-      setError("Keep your whisper under 1200 characters.");
+    if (trimmed.length > MAX_CHARS) {
+      setError(`Keep your whisper under ${MAX_CHARS} characters.`);
       setStatus("error");
       return;
     }
@@ -57,14 +59,21 @@ export default function ConfessionForm() {
           placeholder="In the quiet of this space..."
           spellCheck={false}
           rows={12}
+          maxLength={MAX_CHARS}
           className="w-full resize-none border border-surface-3 bg-surface p-6 text-lg font-mono leading-8 text-on-surface outline-none transition focus:border-tertiary focus:ring-2 focus:ring-tertiary/20"
         />
+        <div className="mt-3 flex items-center justify-between text-[12px] text-on-surface-variant">
+          <span>Note: whispers last 30 days only.</span>
+          <span className={message.length === MAX_CHARS ? "text-tertiary" : ""}>
+            {message.length} / {MAX_CHARS}
+          </span>
+        </div>
       </div>
 
       <div className="flex flex-col gap-4">
         <button
           type="submit"
-          disabled={status === "loading"}
+          disabled={status === "loading" || message.trim().length === 0}
           className="inline-flex items-center justify-center rounded-none bg-tertiary px-10 py-4 text-sm font-bold uppercase tracking-[0.35em] text-surface transition hover:bg-tertiary/90 disabled:cursor-not-allowed disabled:opacity-70"
         >
           {status === "loading" ? "Ibulong..." : "Ibulong"}

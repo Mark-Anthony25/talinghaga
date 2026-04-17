@@ -17,7 +17,7 @@ export default function OfferAWhisperPage() {
                 What is the weight you carry today?
               </h1>
               <p className="mt-6 text-lg leading-8 text-on-surface-variant">
-                Type your whisper below and seal it away in the archive. Every confession is anonymous by design.
+                Type your whisper below and send it to the pader. Leave your metaphor here, or rant lang—this archive listens to both.
               </p>
             </div>
 

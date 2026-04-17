@@ -26,11 +26,6 @@ export default function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4 text-on-surface-variant">
-          <button type="button" className="material-symbols-outlined text-xl transition-colors hover:text-tertiary">
-            settings
-          </button>
-        </div>
       </div>
     </header>
   );

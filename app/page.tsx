@@ -15,10 +15,10 @@ export default function HomePage() {
                 The Archive
               </p>
               <h1 className="font-headline text-5xl leading-tight text-on-surface sm:text-6xl">
-                A Sanctuary for the <span className="text-tertiary">Unspoken.</span>
+                Talinghaga: Ang Pader ng mga <span className="text-tertiary">Parinig.</span>
               </h1>
               <p className="max-w-2xl text-lg leading-9 text-on-surface-variant">
-                In the Whispering Archive, every confession is treated as a sacred artifact. Anonymity is not a feature; it is our foundation.
+                A public archive of unspoken truths and indirect thoughts. Read the whispers of the crowd, or leave your own metaphor behind. pwede rin rant lang.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -42,10 +42,10 @@ export default function HomePage() {
                   Digital Pahiwatig
                 </span>
                 <h2 className="mt-4 font-headline text-3xl leading-tight text-on-surface">
-                  Subtle protections for your identity.
+                  Ang pader para sa mga parinig.
                 </h2>
                 <p className="mt-6 text-sm leading-7 text-on-surface-variant">
-                  Every whisper is shielded by the same care that protects a private letter. Your story remains yours alone.
+                  A public archive ng unspoken truths at indirect thoughts. Basahin ang crowd whispers, o mag-iwan ng sarili mong metaphor. Pwede rin rant lang.
                 </p>
               </div>
               <div className="hidden rounded-none border border-surface-3 bg-surface-2 p-10 lg:block">
