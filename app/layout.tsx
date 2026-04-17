@@ -18,7 +18,12 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   title: "Talinghaga: Ang mga Parinig.",
-  description: "Talinghaga: Ang mga Parinig. A public archive of unspoken truths and indirect thoughts. Read the whispers of the crowd, or leave your own metaphor behind. pwede rin rant lang."
+  description: "Talinghaga: Ang mga Parinig. A public archive of unspoken truths and indirect thoughts. Read the whispers of the crowd, or leave your own metaphor behind. pwede rin rant lang.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png"
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
