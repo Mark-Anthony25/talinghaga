@@ -17,8 +17,8 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Talinghaga: Ang Pader ng mga Parinig.",
-  description: "Talinghaga: Ang Pader ng mga Parinig. A public archive of unspoken truths and indirect thoughts. Read the whispers of the crowd, or leave your own metaphor behind. pwede rin rant lang."
+  title: "Talinghaga: Ang mga Parinig.",
+  description: "Talinghaga: Ang mga Parinig. A public archive of unspoken truths and indirect thoughts. Read the whispers of the crowd, or leave your own metaphor behind. pwede rin rant lang."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
