@@ -14,7 +14,7 @@ export default function SiteHeader() {
           Talinghaga
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="flex flex-wrap items-center gap-4 md:gap-8">
           {navItems.map((item) => (
             <Link
               key={item.href}

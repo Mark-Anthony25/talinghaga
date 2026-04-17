@@ -21,13 +21,37 @@ function missingConfigResponse() {
   );
 }
 
+function sanitizeInput(value: string) {
+  return value
+    .normalize("NFKC")
+    .replace(/<[^>]*>/g, "")
+    .replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "")
+    .trim();
+}
+
+function sanitizeQuery(value: string) {
+  return sanitizeInput(value).replace(/[%_]/g, "");
+}
+
 const MAX_CHARS = 300;
+const MAX_SEARCH_CHARS = 80;
 const EXPIRY_WINDOW_MS = 30 * 24 * 60 * 60 * 1000;
 
-export async function GET() {
+export async function GET(request: Request) {
   const supabase = createSupabaseClient();
   if (!supabase) {
     return missingConfigResponse();
+  }
+
+  const { searchParams } = new URL(request.url);
+  const rawQuery = searchParams.get("q") ?? "";
+  const search = sanitizeQuery(rawQuery);
+
+  if (search.length > MAX_SEARCH_CHARS) {
+    return NextResponse.json(
+      { error: `Search query must be under ${MAX_SEARCH_CHARS} characters.` },
+      { status: 400 }
+    );
   }
 
   const staleThreshold = new Date(Date.now() - EXPIRY_WINDOW_MS).toISOString();
@@ -40,12 +64,18 @@ export async function GET() {
     return NextResponse.json({ error: cleanupError.message }, { status: 500 });
   }
 
-  const { data, error } = await supabase
+  let query = supabase
     .from("mga_talinghaga")
     .select("id, content, created_at")
     .gt("created_at", staleThreshold)
     .order("created_at", { ascending: false })
     .limit(24);
+
+  if (search.length > 0) {
+    query = query.ilike("content", `%${search}%`);
+  }
+
+  const { data, error } = await query;
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -70,8 +100,18 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: cleanupError.message }, { status: 500 });
   }
 
-  const body = await request.json();
-  const content = typeof body?.content === "string" ? body.content.trim() : "";
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid request body." }, { status: 400 });
+  }
+
+  const rawContent =
+    typeof (body as { content?: unknown })?.content === "string"
+      ? (body as { content: string }).content
+      : "";
+  const content = sanitizeInput(rawContent);
 
   if (!content) {
     return NextResponse.json({ error: "Confession cannot be empty." }, { status: 400 });

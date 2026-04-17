@@ -14,15 +14,17 @@ export default function WhisperArchive() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const filteredWhispers = useMemo(
-    () => whispers.filter((whisper) => whisper.content.toLowerCase().includes(query.toLowerCase())),
-    [whispers, query]
-  );
+  const filteredWhispers = useMemo(() => whispers, [whispers]);
 
   useEffect(() => {
     async function loadWhispers() {
       setLoading(true);
-      const response = await fetch("/api/whispers");
+      const search = query.trim();
+      const endpoint = search
+        ? `/api/whispers?q=${encodeURIComponent(search)}`
+        : "/api/whispers";
+
+      const response = await fetch(endpoint);
       if (!response.ok) {
         setError("Unable to load whispers. Please try again.");
         setLoading(false);
@@ -31,11 +33,12 @@ export default function WhisperArchive() {
 
       const data = await response.json();
       setWhispers(data.whispers ?? []);
+      setError(null);
       setLoading(false);
     }
 
     loadWhispers();
-  }, []);
+  }, [query]);
 
   return (
     <div className="space-y-8">
@@ -74,7 +77,7 @@ export default function WhisperArchive() {
         <div className="rounded-none border border-[#93000a] bg-surface-2 p-10 text-sm text-[#ffb4ab]">{error}</div>
       ) : filteredWhispers.length === 0 ? (
         <div className="rounded-none border border-surface-3 bg-surface-2 p-10 text-sm text-on-surface-variant">
-          No whispers match your search.
+          {query.trim().length > 0 ? "No whispers match your search." : "No whispers have arrived yet."}
         </div>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

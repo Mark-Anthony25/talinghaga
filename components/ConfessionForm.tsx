@@ -60,7 +60,7 @@ export default function ConfessionForm() {
           spellCheck={false}
           rows={14}
           maxLength={MAX_CHARS}
-          className="w-full min-h-[280px] resize-none border border-surface-3 bg-surface p-6 text-lg font-mono leading-8 text-on-surface outline-none transition focus:border-tertiary focus:ring-2 focus:ring-tertiary/20 sm:min-h-[380px]"
+          className="w-full min-h-[280px] resize-none border-0 bg-surface p-6 text-lg font-mono leading-8 text-on-surface outline-none transition focus:border-0 focus:ring-2 focus:ring-tertiary/20 sm:min-h-[380px]"
         />
         <div className="mt-3 flex flex-col gap-2 text-[12px] text-on-surface-variant sm:flex-row sm:items-center sm:justify-between">
           <span>Note: whispers last 30 days only.</span>

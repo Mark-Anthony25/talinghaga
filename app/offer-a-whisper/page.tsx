@@ -21,7 +21,7 @@ export default function OfferAWhisperPage() {
               </p>
             </div>
 
-            <div className="rounded-none border border-surface-3 bg-surface-2 p-10">
+            <div className="p-0 sm:p-0">
               <ConfessionForm />
             </div>
           </div>
